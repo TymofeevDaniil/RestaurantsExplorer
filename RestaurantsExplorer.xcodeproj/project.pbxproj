@@ -9,21 +9,35 @@
 /* Begin PBXBuildFile section */
 		2EB36F66275E3E8200089D7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB36F65275E3E8200089D7E /* AppDelegate.swift */; };
 		2EB36F68275E3E8200089D7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB36F67275E3E8200089D7E /* SceneDelegate.swift */; };
-		2EB36F6A275E3E8200089D7E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB36F69275E3E8200089D7E /* ViewController.swift */; };
+		2EB36F6A275E3E8200089D7E /* PlaceSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB36F69275E3E8200089D7E /* PlaceSearchViewController.swift */; };
 		2EB36F6D275E3E8200089D7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EB36F6B275E3E8200089D7E /* Main.storyboard */; };
 		2EB36F6F275E3E8400089D7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EB36F6E275E3E8400089D7E /* Assets.xcassets */; };
 		2EB36F72275E3E8400089D7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EB36F70275E3E8400089D7E /* LaunchScreen.storyboard */; };
+		2EB36F7C275E71B100089D7E /* PlaceDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB36F7B275E71B100089D7E /* PlaceDetailsViewController.swift */; };
+		2EB36F80275E74EA00089D7E /* PlaceSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB36F7F275E74EA00089D7E /* PlaceSearchViewModel.swift */; };
+		2EB36F82275E752600089D7E /* PlaceDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB36F81275E752600089D7E /* PlaceDetailsViewModel.swift */; };
+		2EB36F84275E758B00089D7E /* PlaceSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB36F83275E758B00089D7E /* PlaceSearchModel.swift */; };
+		2EB36F86275E75BC00089D7E /* PlaceDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB36F85275E75BC00089D7E /* PlaceDetailsModel.swift */; };
+		2EB36F8A275E766D00089D7E /* PlaceSearchLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB36F89275E766D00089D7E /* PlaceSearchLoader.swift */; };
+		2EB36F8C275E76A400089D7E /* PlaceDetailsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB36F8B275E76A400089D7E /* PlaceDetailsLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2EB36F62275E3E8200089D7E /* RestaurantsExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestaurantsExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EB36F65275E3E8200089D7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2EB36F67275E3E8200089D7E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2EB36F69275E3E8200089D7E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2EB36F69275E3E8200089D7E /* PlaceSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceSearchViewController.swift; sourceTree = "<group>"; };
 		2EB36F6C275E3E8200089D7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2EB36F6E275E3E8400089D7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2EB36F71275E3E8400089D7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2EB36F73275E3E8400089D7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2EB36F7B275E71B100089D7E /* PlaceDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailsViewController.swift; sourceTree = "<group>"; };
+		2EB36F7F275E74EA00089D7E /* PlaceSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceSearchViewModel.swift; sourceTree = "<group>"; };
+		2EB36F81275E752600089D7E /* PlaceDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailsViewModel.swift; sourceTree = "<group>"; };
+		2EB36F83275E758B00089D7E /* PlaceSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceSearchModel.swift; sourceTree = "<group>"; };
+		2EB36F85275E75BC00089D7E /* PlaceDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailsModel.swift; sourceTree = "<group>"; };
+		2EB36F89275E766D00089D7E /* PlaceSearchLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceSearchLoader.swift; sourceTree = "<group>"; };
+		2EB36F8B275E76A400089D7E /* PlaceDetailsLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailsLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +72,44 @@
 			children = (
 				2EB36F65275E3E8200089D7E /* AppDelegate.swift */,
 				2EB36F67275E3E8200089D7E /* SceneDelegate.swift */,
-				2EB36F69275E3E8200089D7E /* ViewController.swift */,
+				2EB36F7D275E74A800089D7E /* PlaceSearch */,
+				2EB36F7E275E74B600089D7E /* PlaceDetails */,
+				2EB36F88275E75FF00089D7E /* API */,
 				2EB36F6B275E3E8200089D7E /* Main.storyboard */,
 				2EB36F6E275E3E8400089D7E /* Assets.xcassets */,
 				2EB36F70275E3E8400089D7E /* LaunchScreen.storyboard */,
 				2EB36F73275E3E8400089D7E /* Info.plist */,
 			);
 			path = RestaurantsExplorer;
+			sourceTree = "<group>";
+		};
+		2EB36F7D275E74A800089D7E /* PlaceSearch */ = {
+			isa = PBXGroup;
+			children = (
+				2EB36F69275E3E8200089D7E /* PlaceSearchViewController.swift */,
+				2EB36F7F275E74EA00089D7E /* PlaceSearchViewModel.swift */,
+				2EB36F83275E758B00089D7E /* PlaceSearchModel.swift */,
+			);
+			path = PlaceSearch;
+			sourceTree = "<group>";
+		};
+		2EB36F7E275E74B600089D7E /* PlaceDetails */ = {
+			isa = PBXGroup;
+			children = (
+				2EB36F7B275E71B100089D7E /* PlaceDetailsViewController.swift */,
+				2EB36F81275E752600089D7E /* PlaceDetailsViewModel.swift */,
+				2EB36F85275E75BC00089D7E /* PlaceDetailsModel.swift */,
+			);
+			path = PlaceDetails;
+			sourceTree = "<group>";
+		};
+		2EB36F88275E75FF00089D7E /* API */ = {
+			isa = PBXGroup;
+			children = (
+				2EB36F89275E766D00089D7E /* PlaceSearchLoader.swift */,
+				2EB36F8B275E76A400089D7E /* PlaceDetailsLoader.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +183,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2EB36F6A275E3E8200089D7E /* ViewController.swift in Sources */,
+				2EB36F6A275E3E8200089D7E /* PlaceSearchViewController.swift in Sources */,
 				2EB36F66275E3E8200089D7E /* AppDelegate.swift in Sources */,
+				2EB36F80275E74EA00089D7E /* PlaceSearchViewModel.swift in Sources */,
+				2EB36F7C275E71B100089D7E /* PlaceDetailsViewController.swift in Sources */,
+				2EB36F84275E758B00089D7E /* PlaceSearchModel.swift in Sources */,
+				2EB36F8C275E76A400089D7E /* PlaceDetailsLoader.swift in Sources */,
+				2EB36F8A275E766D00089D7E /* PlaceSearchLoader.swift in Sources */,
 				2EB36F68275E3E8200089D7E /* SceneDelegate.swift in Sources */,
+				2EB36F86275E75BC00089D7E /* PlaceDetailsModel.swift in Sources */,
+				2EB36F82275E752600089D7E /* PlaceDetailsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
