@@ -10,10 +10,13 @@ import UIKit
 class PlaceSearhViewController: UIViewController {
     
     private let viewModel = PlaceSearchViewModel()
+    private let dataLoader = PlaceSearchLoader()
+    let test = PlaceSearchModel(results: nil)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        test.parse()
     }
 
 

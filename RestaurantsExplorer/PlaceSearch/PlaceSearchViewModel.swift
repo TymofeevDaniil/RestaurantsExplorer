@@ -9,6 +9,6 @@ import Foundation
 
 class PlaceSearchViewModel {
     
-    private let model = PlaceSearchModel()
+//    let model = PlaceSearchModel()
     
 }
