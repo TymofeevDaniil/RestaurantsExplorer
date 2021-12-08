@@ -81,6 +81,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="fcS-yC-Qv7"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="bYT-Fm-How"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -99,6 +103,7 @@
                         <barButtonItem key="leftBarButtonItem" image="map" catalog="system" style="plain" id="iu8-oR-M8d"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="restaurantTable" destination="awJ-yY-hfl" id="iKS-lL-0vc"/>
                         <segue destination="62a-JW-PRv" kind="show" identifier="detail" id="Kjk-fz-7OZ"/>
                     </connections>
                 </viewController>
