@@ -16,8 +16,11 @@
 		2EB36F7C275E71B100089D7E /* PlaceDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB36F7B275E71B100089D7E /* PlaceDetailsViewController.swift */; };
 		2EB36F80275E74EA00089D7E /* PlaceSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB36F7F275E74EA00089D7E /* PlaceSearchViewModel.swift */; };
 		2EB36F82275E752600089D7E /* PlaceDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB36F81275E752600089D7E /* PlaceDetailsViewModel.swift */; };
-		2EB36F84275E758B00089D7E /* PlaceSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB36F83275E758B00089D7E /* PlaceSearch.swift */; };
+		2EB36F84275E758B00089D7E /* PlaceSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB36F83275E758B00089D7E /* PlaceSearchModel.swift */; };
 		2EB36F86275E75BC00089D7E /* PlaceDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB36F85275E75BC00089D7E /* PlaceDetailsModel.swift */; };
+		2EB36F912760E5D100089D7E /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB36F902760E5D100089D7E /* MyCell.swift */; };
+		2EB36F9A27610E1800089D7E /* FilterCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB36F9927610E1800089D7E /* FilterCategory.swift */; };
+		2EB36F9E2761326300089D7E /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB36F9D2761326300089D7E /* Filter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,8 +35,11 @@
 		2EB36F7B275E71B100089D7E /* PlaceDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailsViewController.swift; sourceTree = "<group>"; };
 		2EB36F7F275E74EA00089D7E /* PlaceSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceSearchViewModel.swift; sourceTree = "<group>"; };
 		2EB36F81275E752600089D7E /* PlaceDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailsViewModel.swift; sourceTree = "<group>"; };
-		2EB36F83275E758B00089D7E /* PlaceSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceSearch.swift; sourceTree = "<group>"; };
+		2EB36F83275E758B00089D7E /* PlaceSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceSearchModel.swift; sourceTree = "<group>"; };
 		2EB36F85275E75BC00089D7E /* PlaceDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailsModel.swift; sourceTree = "<group>"; };
+		2EB36F902760E5D100089D7E /* MyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
+		2EB36F9927610E1800089D7E /* FilterCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCategory.swift; sourceTree = "<group>"; };
+		2EB36F9D2761326300089D7E /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +74,7 @@
 			children = (
 				2EB36F65275E3E8200089D7E /* AppDelegate.swift */,
 				2EB36F67275E3E8200089D7E /* SceneDelegate.swift */,
+				2EB36F9527610DCD00089D7E /* FilterCategory */,
 				2EB36F7D275E74A800089D7E /* PlaceSearch */,
 				2EB36F7E275E74B600089D7E /* PlaceDetails */,
 				2EB36F6B275E3E8200089D7E /* Main.storyboard */,
@@ -91,9 +98,9 @@
 		2EB36F7E275E74B600089D7E /* PlaceDetails */ = {
 			isa = PBXGroup;
 			children = (
-				2EB36F7B275E71B100089D7E /* PlaceDetailsViewController.swift */,
-				2EB36F81275E752600089D7E /* PlaceDetailsViewModel.swift */,
-				2EB36F85275E75BC00089D7E /* PlaceDetailsModel.swift */,
+				2EB36F9227610CED00089D7E /* Model */,
+				2EB36F9327610CF700089D7E /* ViewModel */,
+				2EB36F9427610D0400089D7E /* View */,
 			);
 			path = PlaceDetails;
 			sourceTree = "<group>";
@@ -101,7 +108,8 @@
 		2EB36F8D2760B33E00089D7E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2EB36F83275E758B00089D7E /* PlaceSearch.swift */,
+				2EB36F83275E758B00089D7E /* PlaceSearchModel.swift */,
+				2EB36F9D2761326300089D7E /* Filter.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -118,8 +126,65 @@
 			isa = PBXGroup;
 			children = (
 				2EB36F69275E3E8200089D7E /* PlaceSearchViewController.swift */,
+				2EB36F902760E5D100089D7E /* MyCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		2EB36F9227610CED00089D7E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2EB36F85275E75BC00089D7E /* PlaceDetailsModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2EB36F9327610CF700089D7E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2EB36F81275E752600089D7E /* PlaceDetailsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2EB36F9427610D0400089D7E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2EB36F7B275E71B100089D7E /* PlaceDetailsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2EB36F9527610DCD00089D7E /* FilterCategory */ = {
+			isa = PBXGroup;
+			children = (
+				2EB36F9827610DFC00089D7E /* Model */,
+				2EB36F9727610DF000089D7E /* ViewModel */,
+				2EB36F9627610DE400089D7E /* View */,
+			);
+			path = FilterCategory;
+			sourceTree = "<group>";
+		};
+		2EB36F9627610DE400089D7E /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2EB36F9727610DF000089D7E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2EB36F9827610DFC00089D7E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2EB36F9927610E1800089D7E /* FilterCategory.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,9 +260,12 @@
 			files = (
 				2EB36F6A275E3E8200089D7E /* PlaceSearchViewController.swift in Sources */,
 				2EB36F66275E3E8200089D7E /* AppDelegate.swift in Sources */,
+				2EB36F9E2761326300089D7E /* Filter.swift in Sources */,
 				2EB36F80275E74EA00089D7E /* PlaceSearchViewModel.swift in Sources */,
 				2EB36F7C275E71B100089D7E /* PlaceDetailsViewController.swift in Sources */,
-				2EB36F84275E758B00089D7E /* PlaceSearch.swift in Sources */,
+				2EB36F84275E758B00089D7E /* PlaceSearchModel.swift in Sources */,
+				2EB36F9A27610E1800089D7E /* FilterCategory.swift in Sources */,
+				2EB36F912760E5D100089D7E /* MyCell.swift in Sources */,
 				2EB36F68275E3E8200089D7E /* SceneDelegate.swift in Sources */,
 				2EB36F86275E75BC00089D7E /* PlaceDetailsModel.swift in Sources */,
 				2EB36F82275E752600089D7E /* PlaceDetailsViewModel.swift in Sources */,

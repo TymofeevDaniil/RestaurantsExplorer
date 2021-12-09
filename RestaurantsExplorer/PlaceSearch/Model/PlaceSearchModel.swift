@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PlaceSearch: Decodable {
+struct PlaceSearchModel: Decodable {
     
     let results : [Result]
 

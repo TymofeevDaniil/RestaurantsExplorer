@@ -15,6 +15,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eQx-vb-7HW">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="vIk-nr-SuN"/>
@@ -33,45 +34,48 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter city name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rln-rC-MKm">
-                                <rect key="frame" x="60" y="98" width="294" height="34"/>
+                                <rect key="frame" x="60" y="88" width="294" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="searchByCity:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="Pfe-Yp-rDq"/>
+                                </connections>
                             </textField>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="awJ-yY-hfl">
-                                <rect key="frame" x="0.0" y="152" width="414" height="710"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="awJ-yY-hfl">
+                                <rect key="frame" x="0.0" y="173" width="414" height="689"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="90" id="2X5-7M-sdn">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="90" id="2X5-7M-sdn" customClass="MyCell" customModule="RestaurantsExplorer" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2X5-7M-sdn" id="ElE-eC-bQu">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L1D-KX-q8V">
-                                                    <rect key="frame" x="35" y="11" width="344" height="23"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L1D-KX-q8V">
+                                                    <rect key="frame" x="35" y="11" width="344" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="088-s1-o41">
-                                                    <rect key="frame" x="35" y="35" width="344" height="13.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <rect key="frame" x="35" y="42" width="344" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ay-8F-9eq">
-                                                    <rect key="frame" x="35" y="48.5" width="344" height="19.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <rect key="frame" x="35" y="62" width="344" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="2ay-8F-9eq" secondAttribute="trailing" constant="15" id="237-gX-3Zn"/>
+                                                <constraint firstAttribute="bottom" secondItem="2ay-8F-9eq" secondAttribute="bottom" constant="4" id="6Ud-I8-LGX"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="L1D-KX-q8V" secondAttribute="trailing" constant="15" id="Ete-15-Ri3"/>
                                                 <constraint firstItem="088-s1-o41" firstAttribute="leading" secondItem="ElE-eC-bQu" secondAttribute="leadingMargin" constant="15" id="IoP-Rx-tfC"/>
-                                                <constraint firstItem="2ay-8F-9eq" firstAttribute="top" secondItem="088-s1-o41" secondAttribute="bottom" id="L5D-vZ-6f1"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="088-s1-o41" secondAttribute="trailing" constant="15" id="Ziy-rf-0sw"/>
                                                 <constraint firstItem="L1D-KX-q8V" firstAttribute="leading" secondItem="ElE-eC-bQu" secondAttribute="leadingMargin" constant="15" id="akM-uG-x9y"/>
                                                 <constraint firstItem="L1D-KX-q8V" firstAttribute="top" secondItem="ElE-eC-bQu" secondAttribute="topMargin" id="cD8-NJ-rDT"/>
@@ -79,6 +83,11 @@
                                                 <constraint firstItem="088-s1-o41" firstAttribute="top" secondItem="L1D-KX-q8V" secondAttribute="bottom" constant="1" id="tPB-5v-YA0"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="categoryLabel" destination="088-s1-o41" id="BJc-eE-eNG"/>
+                                            <outlet property="locationLabel" destination="2ay-8F-9eq" id="yW9-JV-jEs"/>
+                                            <outlet property="nameLabel" destination="L1D-KX-q8V" id="wol-1N-tyd"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -86,32 +95,48 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="bYT-Fm-How"/>
                                 </connections>
                             </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bKr-v7-aAP">
+                                <rect key="frame" x="10" y="132" width="394" height="32"/>
+                                <segments>
+                                    <segment title="All"/>
+                                    <segment title="Fast Food"/>
+                                    <segment title="Asian"/>
+                                    <segment title="Italian"/>
+                                    <segment title="Winery"/>
+                                </segments>
+                                <connections>
+                                    <action selector="filterSearch:" destination="BYZ-38-t0r" eventType="valueChanged" id="Lgq-Fx-spu"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="bKr-v7-aAP" firstAttribute="top" secondItem="Rln-rC-MKm" secondAttribute="bottom" constant="10" id="2eH-05-x05"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Rln-rC-MKm" secondAttribute="trailing" constant="60" id="4ej-Ec-B9b"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="awJ-yY-hfl" secondAttribute="bottom" id="JNR-KW-yWz"/>
-                            <constraint firstItem="Rln-rC-MKm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="RSp-fW-HuO"/>
+                            <constraint firstItem="Rln-rC-MKm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="RSp-fW-HuO"/>
                             <constraint firstItem="awJ-yY-hfl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Scm-3V-8Ry"/>
+                            <constraint firstItem="awJ-yY-hfl" firstAttribute="top" secondItem="bKr-v7-aAP" secondAttribute="bottom" constant="10" id="YIs-ed-POC"/>
+                            <constraint firstItem="bKr-v7-aAP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="ekx-AZ-sVx"/>
                             <constraint firstItem="Rln-rC-MKm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="jWD-vq-hXV"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="awJ-yY-hfl" secondAttribute="trailing" id="oRS-Qf-jgB"/>
-                            <constraint firstItem="awJ-yY-hfl" firstAttribute="top" secondItem="Rln-rC-MKm" secondAttribute="bottom" constant="20" id="ql1-cp-ZZd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bKr-v7-aAP" secondAttribute="trailing" constant="10" id="yHb-Ul-Xgs"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Search by City" id="Dtn-DN-Qfe">
-                        <barButtonItem key="leftBarButtonItem" image="map" catalog="system" style="plain" id="iu8-oR-M8d"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Search by City" id="Dtn-DN-Qfe"/>
                     <connections>
+                        <outlet property="city" destination="Rln-rC-MKm" id="bpj-wp-Uwh"/>
+                        <outlet property="filter" destination="bKr-v7-aAP" id="rws-HI-222"/>
                         <outlet property="restaurantTable" destination="awJ-yY-hfl" id="iKS-lL-0vc"/>
                         <segue destination="62a-JW-PRv" kind="show" identifier="detail" id="Kjk-fz-7OZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="30" y="67"/>
+            <point key="canvasLocation" x="28.985507246376812" y="66.964285714285708"/>
         </scene>
-        <!--Place Details View Controller-->
+        <!--Details-->
         <scene sceneID="Ocm-Ol-K2q">
             <objects>
                 <viewController id="62a-JW-PRv" customClass="PlaceDetailsViewController" customModule="RestaurantsExplorer" customModuleProvider="target" sceneMemberID="viewController">
@@ -134,7 +159,7 @@
                             <constraint firstItem="yAL-at-aTJ" firstAttribute="leading" secondItem="KBD-S1-1St" secondAttribute="leading" id="q0f-vm-RqU"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="keO-Dy-tRk"/>
+                    <navigationItem key="navigationItem" title="Details" id="keO-Dy-tRk"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FKz-iR-hCR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -142,7 +167,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="map" catalog="system" width="128" height="110"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
