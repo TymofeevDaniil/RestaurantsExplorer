@@ -12,16 +12,26 @@ class ImageLoader {
     
     var image = UIImage()
     
-    func loadImage(com: @escaping (ImageLoader) -> ()) {
-        let dataTask = URLSession.shared.dataTask(
-            with: URL(string:"https://fastly.4sqi.net/img/general/original/62121742_QLQ5yXinmM2QOPP0K9Hai3bxpzvShxXuRqPa9CMfyGA.jpg")!) { data, response, error in
-                if error != nil {
-                    print("data error")
-                }
-                guard let data = data, let image = UIImage(data: data)  else { print("no data"); return }
-                self.image = image
+    func loadImage(url: String?, com: @escaping (ImageLoader) -> ()) {
+        if url == nil {
+            //i can use forse umwrap here
+            let noImage = UIImage(systemName: "gear")!
+            image = noImage
+            print("no url")
+        } else {
+            let dataTask = URLSession.shared.dataTask(
+                //i can use force unwrap here
+                with: URL(string:url!)!) { data, response, error in
+                    if error != nil {
+                        print("url error")
+                        return
+                    }
+                    guard let data = data, let image = UIImage(data: data)  else { print("no data"); return }
+                    self.image = image
+            }
+            dataTask.resume()
         }
-        dataTask.resume()
+        print(url)
         com(self)
     }
 }

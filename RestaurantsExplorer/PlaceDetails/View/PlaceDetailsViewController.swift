@@ -9,32 +9,52 @@ import UIKit
 
 class PlaceDetailsViewController: UIViewController {
     
-    @IBOutlet weak var photo: UIImageView!
-    private let viewModel = PlaceDetailsViewModel()
-    private let imageLoader = ImageLoader()
+    @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var telephoneLabel: UILabel!
     
-    var flag = true
-
+    private let viewModel = PlaceDetailsViewModel()
+    var id = String()
+    var flag = false { didSet {
+        self.updateView()
+    }}
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        imageLoader.loadImage { data in
-            
+        
+        viewModel.search(id: self.id) { [unowned self] data in
             DispatchQueue.main.async {
-                self.photo.image = data.image
+                nameLabel.text = viewModel.name
+                descriptionLabel.text = viewModel.description
+                locationLabel.text = viewModel.location
+                telephoneLabel.text = "tel: " + viewModel.telephone
+                print("search")
+                flag.toggle()
             }
-
         }
-        viewModel.search { result in
-            print(result.name)
-            
+//        viewModel.imageLoader.loadImage(url: self.viewModel.photoURL) { [unowned self] _ in
+//            print("start")
 //            DispatchQueue.main.async {
-//                self.photo.image = UIImage(systemName: "gear")
+//                photoImageView.image = viewModel.imageLoader.image
+//                print("image")
 //            }
-        }
+//        }
     }
-    override func viewDidDisappear(_ animated: Bool) {
-        print("details disappear")
+    
+    private func updateView() {
+        print(viewModel.photoURL)
+        viewModel.imageLoader.loadImage(url: self.viewModel.photoURL) { [unowned self] _ in
+            print("start")
+            DispatchQueue.main.async {
+                photoImageView.image = viewModel.imageLoader.image
+                photoImageView.setNeedsLayout()
+                photoImageView.setNeedsDisplay()
+                print("image")
+            }
+        }
     }
 
 }

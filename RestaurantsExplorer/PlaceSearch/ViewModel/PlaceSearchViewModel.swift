@@ -15,10 +15,10 @@ class PlaceSearchViewModel {
     var idList = [String]()
     
     func search(city: String, filter: String = Filter.all.rawValue, com: @escaping ([Result]) -> ()) {
-        
         nameList.removeAll()
         categoryList.removeAll()
         locationList.removeAll()
+        idList.removeAll()
         
         //MARK: - JSON Parsing
         let headers = [
@@ -31,7 +31,8 @@ class PlaceSearchViewModel {
         request.allHTTPHeaderFields = headers
         
         let session = URLSession.shared
-        let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) in
+        let dataTask = session.dataTask(
+            with: request as URLRequest, completionHandler: { (data, response, error) in
             
             if (error != nil) {
                 print("error request")

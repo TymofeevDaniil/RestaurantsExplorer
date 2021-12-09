@@ -9,18 +9,20 @@ import Foundation
 
 class PlaceDetailsViewModel {
     
+    let imageLoader = ImageLoader()
+    var id = String()
     var name = String()
+    var description = String()
     var telephone = String()
     var location = String()
-    var photoURL = String()
+    var photoURL: String? = nil
     
-    
-    func search(com: @escaping (PlaceDetailsModel) -> ()) {
+    func search(id: String, com: @escaping (PlaceDetailsModel) -> ()) {
         let headers = [
           "Accept": "application/json",
           "Authorization": "fsq3hRqQ7Bdp6hABZmEHSki+HEZfhTSgGAalL/xO3OtvAl4="
         ]
-        let request = NSMutableURLRequest(url: NSURL(string: "https://api.foursquare.com/v3/places/4e0d71fafa76d62f443f0164?fields=name%2Clocation%2Ctel%2Cphotos")! as URL,
+        let request = NSMutableURLRequest(url: NSURL(string: "https://api.foursquare.com/v3/places/" + id + "?fields=name%2Clocation%2Cdescription%2Ctel%2Cphotos")! as URL,
             cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
         request.httpMethod = "GET"
         request.allHTTPHeaderFields = headers
@@ -34,24 +36,24 @@ class PlaceDetailsViewModel {
             do {
                 guard let data = data else { return }
                 let result = try JSONDecoder().decode(PlaceDetailsModel.self, from: data)
-                self.name = result.name
-                self.telephone = result.tel
-                self.location = result.location.address
-                if let photo = result.photos.first {
-                    self.photoURL = photo.prefix + "original" + photo.suffix
+                
+                let checkDetails: [String?] = [result.tel, result.location.address, result.description]
+                let details = checkDetails.map{$0 ?? "N/A"}
+                if let photoContainer = result.photos.first {
+                    self.photoURL = photoContainer.prefix + "original" + photoContainer.suffix
                 }
                 
+                self.name = result.name
+                self.telephone = details[0]
+                self.location = details[1]
+                self.description = details[2]
                 com(result)
             }
             catch {
                 print("erorr data")
             }
         })
-
         dataTask.resume()
     }
     
-    func loadPhoto(url: String) {
-        
-    }
 }

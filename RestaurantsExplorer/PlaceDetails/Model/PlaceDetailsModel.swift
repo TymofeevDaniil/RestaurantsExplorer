@@ -9,15 +9,16 @@ import Foundation
 
 struct PlaceDetailsModel: Decodable {
     
+    let description: String?
     let location: LocationDetails
     let name: String
     let photos: [Photo]
-    let tel: String
+    let tel: String?
 }
 
 struct LocationDetails: Decodable {
     
-    let address: String
+    let address: String?
     
 }
 

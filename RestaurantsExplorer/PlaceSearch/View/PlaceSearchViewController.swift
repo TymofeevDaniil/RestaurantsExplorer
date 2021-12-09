@@ -9,16 +9,16 @@ import UIKit
 
 class PlaceSearhViewController: UIViewController {
     
-    @IBOutlet weak var city: UITextField!
-    @IBOutlet weak var filter: UISegmentedControl!
+    @IBOutlet weak var cityTextField: UITextField!
+    @IBOutlet weak var filterSegmentedControl: UISegmentedControl!
     @IBOutlet weak var restaurantTable: UITableView!
     
     @IBAction func filterSearch(_ sender: UISegmentedControl) {
-        updateView(city: city.text, filter: currentFilter())
+        updateView(city: cityTextField.text, filter: currentFilter())
     }
     
     @IBAction func searchButton(_ sender: Any) {
-        updateView(city: city.text, filter: currentFilter())
+        updateView(city: cityTextField.text, filter: currentFilter())
     }
     
     private let viewModel = PlaceSearchViewModel()
@@ -29,7 +29,7 @@ class PlaceSearhViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        updateView(city: city.text, filter: Filter.all.rawValue)
+        updateView(city: cityTextField.text, filter: Filter.all.rawValue)
     }
     
     private func updateView (city: String?, filter: String) {
@@ -46,7 +46,7 @@ class PlaceSearhViewController: UIViewController {
     
     private func currentFilter() -> String {
         let currentfilter: Filter
-        switch filter.selectedSegmentIndex {
+        switch filterSegmentedControl.selectedSegmentIndex {
             case 1: currentfilter = .fastFood
             case 2: currentfilter = .asian
             case 3: currentfilter = .italian
@@ -55,9 +55,11 @@ class PlaceSearhViewController: UIViewController {
         }
         return currentfilter.rawValue
     }
+    
 }
 
 extension PlaceSearhViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return nameList.count
     }
@@ -74,8 +76,9 @@ extension PlaceSearhViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.cellForRow(at: indexPath)?.isSelected.toggle()
         if let vc = storyboard?.instantiateViewController(withIdentifier: "Details") as? PlaceDetailsViewController {
             navigationController?.pushViewController(vc, animated: true)
+            vc.id = viewModel.idList[indexPath.row]
+            print(vc.id)
         }
-//        navigationController?.pushViewController(PlaceDetailsViewController(), animated: true)
     }
     
 }
