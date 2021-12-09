@@ -10,7 +10,7 @@ import Foundation
 enum Filter: String {
     
     case all = "13065"
-    case fastFood = "13058%2C13064"
+    case fastFood = "13145"
     case asian = "13099%2C13263"
     case italian = "13236"
     case ukrainian = "13374"

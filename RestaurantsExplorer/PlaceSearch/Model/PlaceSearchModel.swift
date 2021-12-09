@@ -15,6 +15,7 @@ struct PlaceSearchModel: Decodable {
 
 struct Result: Decodable {
     
+    let fsq_id: String
     let categories: [Categories]
     let location: Location
     let name: String
@@ -30,6 +31,6 @@ struct Categories: Decodable {
 
 struct Location: Decodable {
     
-    let address: String
+    let address: String?
 
 }

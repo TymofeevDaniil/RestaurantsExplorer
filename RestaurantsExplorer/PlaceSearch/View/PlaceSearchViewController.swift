@@ -11,28 +11,15 @@ class PlaceSearhViewController: UIViewController {
     
     @IBOutlet weak var city: UITextField!
     @IBOutlet weak var filter: UISegmentedControl!
+    @IBOutlet weak var restaurantTable: UITableView!
     
     @IBAction func filterSearch(_ sender: UISegmentedControl) {
-        var currentfilter: Filter
-        switch sender.selectedSegmentIndex {
-            case 1: currentfilter = .fastFood
-            case 2: currentfilter = .asian
-            case 3: currentfilter = .italian
-            case 4: currentfilter = .ukrainian
-            default: currentfilter = .all
-        }
-        updateView(city: city.text, filter: currentfilter.rawValue)
+        updateView(city: city.text, filter: currentFilter())
     }
     
-    @IBAction func searchByCity(_ sender: UITextField) {
-        guard let city = sender.text else { return }
-        guard let filter = filter.titleForSegment(at: filter.selectedSegmentIndex) else { return }
-        viewModel.search(city: city, filter: filter ) {_ in
-            
-        }
+    @IBAction func searchButton(_ sender: Any) {
+        updateView(city: city.text, filter: currentFilter())
     }
-    
-    @IBOutlet weak var restaurantTable: UITableView!
     
     private let viewModel = PlaceSearchViewModel()
     private var nameList = [String]()
@@ -45,7 +32,7 @@ class PlaceSearhViewController: UIViewController {
         updateView(city: city.text, filter: Filter.all.rawValue)
     }
     
-    func updateView (city: String?, filter: String) {
+    private func updateView (city: String?, filter: String) {
         guard let city = city else { return }
         viewModel.search(city: city, filter: filter) { [unowned self] _ in
             nameList = viewModel.nameList
@@ -55,6 +42,18 @@ class PlaceSearhViewController: UIViewController {
                 restaurantTable.reloadData()
             }
         }
+    }
+    
+    private func currentFilter() -> String {
+        let currentfilter: Filter
+        switch filter.selectedSegmentIndex {
+            case 1: currentfilter = .fastFood
+            case 2: currentfilter = .asian
+            case 3: currentfilter = .italian
+            case 4: currentfilter = .ukrainian
+            default: currentfilter = .all
+        }
+        return currentfilter.rawValue
     }
 }
 
