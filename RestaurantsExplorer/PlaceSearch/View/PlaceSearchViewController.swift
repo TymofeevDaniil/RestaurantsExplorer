@@ -72,7 +72,10 @@ extension PlaceSearhViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.cellForRow(at: indexPath)?.isSelected.toggle()
-        navigationController?.pushViewController(PlaceDetailsViewController(), animated: true)
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "Details") as? PlaceDetailsViewController {
+            navigationController?.pushViewController(vc, animated: true)
+        }
+//        navigationController?.pushViewController(PlaceDetailsViewController(), animated: true)
     }
     
 }

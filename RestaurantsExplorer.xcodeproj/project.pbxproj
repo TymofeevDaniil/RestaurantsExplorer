@@ -21,6 +21,7 @@
 		2EB36F912760E5D100089D7E /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB36F902760E5D100089D7E /* MyCell.swift */; };
 		2EB36F9A27610E1800089D7E /* FilterCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB36F9927610E1800089D7E /* FilterCategory.swift */; };
 		2EB36F9E2761326300089D7E /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB36F9D2761326300089D7E /* Filter.swift */; };
+		2EB36FA027623F5400089D7E /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB36F9F27623F5400089D7E /* ImageLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		2EB36F902760E5D100089D7E /* MyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
 		2EB36F9927610E1800089D7E /* FilterCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCategory.swift; sourceTree = "<group>"; };
 		2EB36F9D2761326300089D7E /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		2EB36F9F27623F5400089D7E /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				2EB36F81275E752600089D7E /* PlaceDetailsViewModel.swift */,
+				2EB36F9F27623F5400089D7E /* ImageLoader.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			files = (
 				2EB36F6A275E3E8200089D7E /* PlaceSearchViewController.swift in Sources */,
 				2EB36F66275E3E8200089D7E /* AppDelegate.swift in Sources */,
+				2EB36FA027623F5400089D7E /* ImageLoader.swift in Sources */,
 				2EB36F9E2761326300089D7E /* Filter.swift in Sources */,
 				2EB36F80275E74EA00089D7E /* PlaceSearchViewModel.swift in Sources */,
 				2EB36F7C275E71B100089D7E /* PlaceDetailsViewController.swift in Sources */,
