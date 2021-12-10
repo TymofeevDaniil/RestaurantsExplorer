@@ -3,6 +3,7 @@
 Доброго времени суток! Задачу считаю выполненной, дальше следуют небольшие пояснения.
 
 ++++++++++++++++++++++++++++++++++++++++++++++++++
+
 CASE: 
 Restaurants Explorer
 iOS client app
@@ -28,6 +29,7 @@ crashes will be automatically rejected)
 Code requirements:
 - Code should implement one of the known architecture
 - Code must support common code convention
+
 ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 В указанном API произошли изменения, версия Venues в таске уже устарела,сейчас используется API "Places" - оно полностью включает в себя предыдущий, поэтому использовал его.
