@@ -16,7 +16,7 @@ class PlaceSearhViewController: UIViewController {
     @IBAction func filterSearch(_ sender: UISegmentedControl) {
         updateView(city: cityTextField.text, filter: currentFilter())
     }
-    
+
     @IBAction func searchButton(_ sender: Any) {
         updateView(city: cityTextField.text, filter: currentFilter())
     }
@@ -77,9 +77,7 @@ extension PlaceSearhViewController: UITableViewDelegate, UITableViewDataSource {
         if let vc = storyboard?.instantiateViewController(withIdentifier: "Details") as? PlaceDetailsViewController {
             navigationController?.pushViewController(vc, animated: true)
             vc.id = viewModel.idList[indexPath.row]
-            print(vc.id)
         }
     }
     
 }
-

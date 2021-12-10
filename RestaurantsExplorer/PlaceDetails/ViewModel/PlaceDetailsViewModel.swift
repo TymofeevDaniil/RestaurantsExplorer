@@ -6,28 +6,16 @@
 //
 
 import Foundation
-import UIKit
 
 class PlaceDetailsViewModel {
     
-    let imageLoader = ImageLoader()
-    
-    var image = UIImage()
     var id = String()
     var name = String()
     var description = String()
     var telephone = String()
     var location = String()
-    var photoURL: String? = nil
-//    {
-//        didSet {
-//            self.imageLoader.loadImage(url: photoURL) { data in
-//                self.image = data.image
-//            }
-//        }
-//    }
     
-    func search(id: String, com: @escaping (ImageLoader) -> ()) {
+    func search(id: String, com: @escaping () -> ()) {
         let headers = [
           "Accept": "application/json",
           "Authorization": "fsq3hRqQ7Bdp6hABZmEHSki+HEZfhTSgGAalL/xO3OtvAl4="
@@ -46,18 +34,14 @@ class PlaceDetailsViewModel {
             do {
                 guard let data = data else { return }
                 let result = try JSONDecoder().decode(PlaceDetailsModel.self, from: data)
-                
                 let checkDetails: [String?] = [result.tel, result.location.address, result.description]
                 let details = checkDetails.map{$0 ?? "N/A"}
-                if let photoContainer = result.photos.first {
-                    self.photoURL = photoContainer.prefix + "original" + photoContainer.suffix
-                }
                 
                 self.name = result.name
                 self.telephone = details[0]
                 self.location = details[1]
                 self.description = details[2]
-                com(self.imageLoader)
+                com()
             }
             catch {
                 print("erorr data")

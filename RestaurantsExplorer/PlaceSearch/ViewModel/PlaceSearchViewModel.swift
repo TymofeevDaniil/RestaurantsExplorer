@@ -59,4 +59,5 @@ class PlaceSearchViewModel {
         })
         dataTask.resume()
     }
+    
 }
