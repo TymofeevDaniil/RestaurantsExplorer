@@ -12,15 +12,15 @@ class ImageLoader {
     
     var image = UIImage()
     
-    func loadImage(url: String?, com: @escaping (ImageLoader) -> ()) {
+    func loadImage(url: String?, com: @escaping () -> ()) {
         if url == nil {
             //i can use forse umwrap here
             let noImage = UIImage(systemName: "gear")!
             image = noImage
             print("no url")
         } else {
+            print("    " + url!)
             let dataTask = URLSession.shared.dataTask(
-                //i can use force unwrap here
                 with: URL(string:url!)!) { data, response, error in
                     if error != nil {
                         print("url error")
@@ -28,10 +28,10 @@ class ImageLoader {
                     }
                     guard let data = data, let image = UIImage(data: data)  else { print("no data"); return }
                     self.image = image
+                    com()
             }
             dataTask.resume()
         }
-        print(url)
-        com(self)
+//        com()
     }
 }

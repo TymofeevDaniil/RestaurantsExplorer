@@ -6,18 +6,28 @@
 //
 
 import Foundation
+import UIKit
 
 class PlaceDetailsViewModel {
     
     let imageLoader = ImageLoader()
+    
+    var image = UIImage()
     var id = String()
     var name = String()
     var description = String()
     var telephone = String()
     var location = String()
     var photoURL: String? = nil
+//    {
+//        didSet {
+//            self.imageLoader.loadImage(url: photoURL) { data in
+//                self.image = data.image
+//            }
+//        }
+//    }
     
-    func search(id: String, com: @escaping (PlaceDetailsModel) -> ()) {
+    func search(id: String, com: @escaping (ImageLoader) -> ()) {
         let headers = [
           "Accept": "application/json",
           "Authorization": "fsq3hRqQ7Bdp6hABZmEHSki+HEZfhTSgGAalL/xO3OtvAl4="
@@ -47,7 +57,7 @@ class PlaceDetailsViewModel {
                 self.telephone = details[0]
                 self.location = details[1]
                 self.description = details[2]
-                com(result)
+                com(self.imageLoader)
             }
             catch {
                 print("erorr data")
